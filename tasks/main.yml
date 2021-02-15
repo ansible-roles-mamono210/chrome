@@ -1,0 +1,24 @@
+---
+- name: Check whether Google Chrome is installed
+  ansible.builtin.command: google-chrome --version
+  register: CHROME_INSTALLED
+  changed_when: false
+  ignore_errors: true
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
+
+- name: Add Google Chrome RPM package to system
+  ansible.builtin.yum_repository:
+    name: google-chrome
+    description: google-chrome
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch
+    gpgcheck: yes
+    gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+  when: CHROME_INSTALLED is failed
+
+- name: Install Google Chrome stable version
+  ansible.builtin.package:
+    name: google-chrome-stable
+    state: present
+  when: CHROME_INSTALLED is failed

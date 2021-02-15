@@ -1,9 +1,37 @@
-This playbook installs Google Chrome on CentOS7.
+[![](https://github.com/ansible-roles-matsumura/chrome/workflows/build/badge.svg)](https://github.com/ansible-roles-matsumura/chrome/actions?query=workflow%3Abuild)
 
-## Install Google Chrome
+Role Description
+=========
 
-Change to root and execute commands below.
+Installs [Google Chrome](https://www.google.com/chrome/) for CentOS7.
 
+Requirements
+------------
+
+None
+
+Role Variables
+--------------
+
+None
+
+Dependencies
+------------
+
+None
+
+Example Playbook
+----------------
+
+```YAML
+---
+- hosts: all
+  become: true
+  roles:
+    - chrome
 ```
-ansible-playbook -i localhost, -c local install.yml
-```
+
+License
+-------
+
+BSD
