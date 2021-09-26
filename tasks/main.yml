@@ -1,7 +1,7 @@
 ---
 - name: Check whether Google Chrome is installed
   ansible.builtin.command: google-chrome --version
-  register: CHROME_INSTALLED
+  register: chrome_installed
   changed_when: false
   ignore_errors: true
   environment:
@@ -15,10 +15,10 @@
     gpgcheck: yes
     gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
-  when: CHROME_INSTALLED is failed
+  when: chrome_installed is failed
 
 - name: Install Google Chrome stable version
   ansible.builtin.package:
     name: google-chrome-stable
     state: present
-  when: CHROME_INSTALLED is failed
+  when: chrome_installed is failed
