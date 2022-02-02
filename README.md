@@ -3,7 +3,7 @@
 Role Description
 =========
 
-Installs [Google Chrome](https://www.google.com/chrome/) for CentOS7.
+Installs [Google Chrome](https://www.google.com/chrome/) for CentOS7/Stream8.
 
 Requirements
 ------------
