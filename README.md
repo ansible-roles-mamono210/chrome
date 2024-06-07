@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/ansible-roles-mamono210/chrome/tree/main.svg?style=svg)](https://circleci.com/gh/ansible-roles-mamono210/chrome/tree/main)
+# This repository is deprecated, no more changes shall be made to this repository.
 
 Role Description
 =========
